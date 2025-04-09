@@ -3,9 +3,9 @@ import { useEffect, useRef } from 'react';
 function useScrollAnimation(
     targetSelector,
     visibleClass = 'is-visible',
-    options = { threshold: 0.1, triggerOnce: true } 
+    options = { threshold: 0.1, triggerOnce: true }
 ) {
-    const observerRef = useRef(null); 
+    const observerRef = useRef(null);
 
     useEffect(() => {
         const intersectionCallback = (entries, observer) => {
@@ -17,14 +17,14 @@ function useScrollAnimation(
                     }
                 } else {
                     if (!options.triggerOnce) {
-                         entry.target.classList.remove(visibleClass);
+                        entry.target.classList.remove(visibleClass);
                     }
                 }
             });
         };
 
         if (!observerRef.current) {
-             observerRef.current = new IntersectionObserver(intersectionCallback, {
+            observerRef.current = new IntersectionObserver(intersectionCallback, {
                 threshold: options.threshold,
                 rootMargin: options.rootMargin || '0px',
             });
@@ -35,10 +35,10 @@ function useScrollAnimation(
         targets.forEach(target => {
             const alreadyVisible = observer.takeRecords().some(entry => entry.target === target && entry.isIntersecting);
             if (alreadyVisible) {
-                 target.classList.add(visibleClass);
-                 if (!options.triggerOnce) {
+                target.classList.add(visibleClass);
+                if (!options.triggerOnce) {
                     observer.observe(target);
-                 }
+                }
             } else {
                 observer.observe(target);
             }

@@ -1,8 +1,8 @@
 .animate-on-scroll {
   opacity: 0;
-  transform: translateY(50px); /* Start 50px below */
+  transform: translateY(50px);
   transition: opacity 0.6s ease-out, transform 0.8s cubic-bezier(0.25, 0.1, 0.25, 1);
-  will-change: opacity, transform; /* Performance hint */
+  will-change: opacity, transform;
 }
 
 .animate-on-scroll.is-visible {
@@ -13,20 +13,22 @@
 .animate-fade-in {
   opacity: 0;
   transition: opacity 1s ease-in-out;
-   will-change: opacity;
+  will-change: opacity;
 }
+
 .animate-fade-in.is-visible {
   opacity: 1;
 }
 
 .animate-slide-left {
   opacity: 0;
-  transform: translateX(-80px);
+  transform: translateX(-400px);
   transition: opacity 0.5s ease-out, transform 0.7s ease-out;
   will-change: opacity, transform;
 }
+
 .animate-slide-left.is-visible {
-   opacity: 1;
+  opacity: 1;
   transform: translateX(0);
 }
 
@@ -46,7 +48,8 @@ section {
 section h1 {
   margin-bottom: 15px;
 }
+
 section p {
-   margin-bottom: 10px;
-   max-width: 600px;
+  margin-bottom: 10px;
+  max-width: 600px;
 }

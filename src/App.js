@@ -4,7 +4,7 @@ import useScrollAnimation from './useScrollAnimation';
 
 function App() {
   useScrollAnimation('.animate-on-scroll', 'is-visible', {
-    threshold: 0.1,
+    threshold: 0.9,
     triggerOnce: true
   });
 
@@ -13,7 +13,7 @@ function App() {
     triggerOnce: true
   });
   useScrollAnimation('.animate-slide-left', 'is-visible', {
-    threshold: 0.15,
+    threshold: 0.5,
     triggerOnce: true
   });
 
